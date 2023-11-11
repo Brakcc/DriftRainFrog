@@ -10,7 +10,7 @@ public abstract class Unit : MonoBehaviour, IUnit
     public abstract LineRenderer Lr { get; set; }
     public abstract float Speed { get; set; }
     public abstract Vector2 Tar { get; set; }
-    private Vector3 Velocity = Vector3.zero;
+    public abstract float Temp { get; set; }
     public abstract UnitSO UnitData { get; set; }
     #endregion
 
@@ -22,18 +22,29 @@ public abstract class Unit : MonoBehaviour, IUnit
         IsLocked = false;
     }
 
-    public virtual void OnLimit() => Rb.velocity = new(Mathf.Clamp(Rb.velocity.x, -UnitData.MaxSpeed, UnitData.MaxSpeed), Mathf.Clamp(Rb.velocity.y, -UnitData.MaxSpeed, UnitData.MaxSpeed));
+    public virtual void OnLimit() 
+    {
+        Rb.velocity = new(Mathf.Clamp(Rb.velocity.x, -UnitData.MaxSpeed, UnitData.MaxSpeed), Mathf.Clamp(Rb.velocity.y, -UnitData.MaxSpeed, UnitData.MaxSpeed));
+    }
 
     public virtual Vector2 OnAim() => UnitData.Aim.action.ReadValue<Vector2>();
 
-    public virtual void OnDrag(Vector2 targetPos)
+    public virtual void OnPreAim(Vector2 aimed)
+    {
+        if (IsLocked) return;
+        Lr.enabled = true;
+        Vector3[] aimedPos = new Vector3[] { transform.position, new Vector3(aimed.x, aimed.y, 0) + transform.position};
+        Lr.SetPositions(aimedPos);
+    }
+
+    public virtual void OnDrag(Vector2 targetPos, Vector2 aim)
     {
         if (!IsLocked) return;
         Rb.gravityScale = 0;
         GenerateTongue(targetPos);
         if (Speed < UnitData.MaxSpeed) { Speed += Time.deltaTime; }
         Rb.AddForce((targetPos - new Vector2(transform.position.x, transform.position.y)).normalized * Speed);
-        //Rb.velocity = Vector3.SmoothDamp(Rb.velocity, new Vector2(targetPos.x - transform.position.x, targetPos.y - transform.position.y), ref Velocity, UnitData.Cursor);
+        Rb.AddForce(aim.normalized * 7);
     }
 
     public virtual void OnRelease()
@@ -56,6 +67,8 @@ public abstract class Unit : MonoBehaviour, IUnit
             Presselected.CanMove = false;
             IsLocked = true;
             Tar = aimAt.point;
+            Temp = (Tar - Rb.position).magnitude;
+            Rb.velocity /= new Vector2(2, 2);
         }
     }
     #endregion

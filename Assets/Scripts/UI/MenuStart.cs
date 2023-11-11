@@ -16,7 +16,6 @@ public class MenuStart : MonoBehaviour
     void Start()
     {
         string path1 = Application.persistentDataPath + "/datas.data";
-        string path2 = Application.persistentDataPath + "/modes.modes";
         if (!File.Exists(path1))
         {
             GameManager.gm.SaveAll();
@@ -30,19 +29,7 @@ public class MenuStart : MonoBehaviour
 
     void InitsUI()
     {
-        if (SavePlayerData.LoadCurrentBestRunTime() == 0f)
-        {
-            bestTime.text = "No Run Finished Yet";
-        }
-        else
-        {
-            bestTime.text = "Best Run Time \n\r" + Fonctions.FloatToHourClock(SavePlayerData.LoadCurrentBestRunTime());
-        }
-
-        if (SavePlayerData.LoadAchievement() == 1)
-        {
-            tampon.SetActive(true);
-        }
+        
     }
 
     IEnumerator StartTheGame()
@@ -72,14 +59,6 @@ public class MenuStart : MonoBehaviour
 
     public void ResetGame()
     {
-        GameManager.gm.dash = 0;
-        GameManager.gm.checkPoint = new Vector3(-691.6f, 186.8f, 0);
-        GameManager.gm.currentRunTime = 0f;
-        GameManager.gm.NCOn = 0;
-        GameManager.gm.state = 1;
-        GameManager.gm.hasGameStarted = 0;
-        GameManager.gm.musicID = 0;
-        GameManager.gm.lights = 0;
         GameManager.gm.SaveAll();
         CloseSettingsButton();
     }

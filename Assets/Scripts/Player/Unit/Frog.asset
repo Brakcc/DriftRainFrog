@@ -17,7 +17,7 @@ MonoBehaviour:
   objectLayer:
     serializedVersion: 2
     m_Bits: 8
-  maxSpeed: 5
+  maxSpeed: 10
   cursor: 0.25
   reach: 10
   audioEff: {fileID: 0}

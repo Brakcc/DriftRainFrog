@@ -8,17 +8,20 @@ public abstract class AEntity : MonoBehaviour
     #endregion
 
     #region methodes to herit
-    public virtual void OnSpawn(Vector3 spawnPoint)
+    public virtual void OnSpawn()
     {
-        
+        CanMove = true;
     }
     public virtual void OnMove(float speed)
     {
         if (!CanMove) return;
+        transform.position += new Vector3(0, speed * Time.deltaTime, 0);
     }
-    public virtual void OnCollide(EntityEffectType type)
+    public virtual void OnCollide(EntityEffectType type, Rigidbody2D rb)
     {
-        Debug.Log(":D");
+        if (rb.velocity.y >= 0) return;
+        rb.AddForce(Vector2.up * EntityData.Power);
+        rb.GetComponent<Unit>().OnRelease();
     }
     #endregion
 }
