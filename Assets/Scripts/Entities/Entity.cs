@@ -1,24 +1,33 @@
 using UnityEngine;
 
-public abstract class Entity : MonoBehaviour
+public class Entity : AEntity
 {
-    #region accessors to herit
-    public abstract bool CanMove { get; set; }
-    public abstract EntitySO EntityData { get; set; }
+    #region inherited accessors
+    public override bool CanMove { get; set; }
+
+    public override EntitySO EntityData { get => entityData; set { entityData = value; } }
+    [SerializeField] EntitySO entityData;
     #endregion
 
-    #region methodes to herit
-    public virtual void OnSpawn(Vector3 spawnPoint)
+    #region inherited methodes
+    // Start is called before the first frame update
+    void Start()
     {
         
     }
-    public virtual void OnMove(float speed)
+
+    // Update is called once per frame
+    void Update()
     {
-        if (!CanMove) return;
+        OnMove(EntityData.Speed);
     }
-    public virtual void OnCollide(EntityEffectType type)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(":D");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            OnCollide(EntityData.EffectType);
+        }
     }
     #endregion
 }

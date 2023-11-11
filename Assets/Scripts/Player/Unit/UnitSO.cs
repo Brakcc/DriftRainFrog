@@ -16,6 +16,9 @@ public class UnitSO : ScriptableObject, IUnitData
     public float MaxSpeed { get => maxSpeed; set { maxSpeed = value; } }
     [SerializeField] private float maxSpeed;
 
+    public float Cursor { get => cursor; set { cursor = value; } }
+    [SerializeField] float cursor;
+
     public float Reach { get => reach; set { reach = value; } }
     [SerializeField] private float reach;
 
