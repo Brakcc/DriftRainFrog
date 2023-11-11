@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class Entity : MonoBehaviour
 {
     #region accessors to herit
+    public abstract bool CanMove { get; set; }
     public abstract EntitySO EntityData { get; set; }
     #endregion
 
@@ -13,7 +14,7 @@ public abstract class Entity : MonoBehaviour
     }
     public virtual void OnMove(float speed)
     {
-
+        if (!CanMove) return;
     }
     public virtual void OnCollide(EntityEffectType type)
     {

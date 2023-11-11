@@ -1,36 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Froggo : Unit
 {
-    public override InputActionReference Aim { get => aim; set { aim = value; } }
-    [SerializeField] InputActionReference aim;
-
-    public override InputActionReference Shoot { get => shoot; set { shoot = value; } }
-    [SerializeField] InputActionReference shoot;
-
-    public override InputActionReference Drag { get => drag; set { drag = value; } }
-    [SerializeField] InputActionReference drag;
- 
     public override bool IsLocked { get; set; }
 
     public override Entity Presselected { get; set; }
 
+    public override Rigidbody2D Rb { get; set; }
+
+    public override float Speed { get; set; }
+
     public override UnitSO UnitData { get => unitData; set { unitData = value; } }
     [SerializeField] UnitSO unitData;
+
+    [SerializeField] InputActionReference move;
+    [SerializeField] InputActionReference hsoot;
 
     // Start is called before the first frame update
     void Start()
     {
-        IsLocked = false;
+        OnInit();
     }
 
     // Update is called once per frame
     void Update()
     {
-        OnAim();
-        OnShoot();
+        OnLimit();
+        if (Keyboard.current.spaceKey.wasPressedThisFrame) { Debug.Log("eovnefkn"); OnShoot(move.action.ReadValue<Vector2>()); }
+        OnDrag(move.action.ReadValue<Vector2>());
+        if (Keyboard.current.spaceKey.wasReleasedThisFrame) { OnRelease(); }
     }
 }

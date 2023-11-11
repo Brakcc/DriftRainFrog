@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public interface IUnitData
 {
-    float Speed { get; }
+    InputActionReference Aim { get; }
+    InputActionReference Shoot { get; }
+    LayerMask ObjectLayer { get; }
+    float MaxSpeed { get; }
     float Reach { get; }
     AudioClip AudioEff { get; }
 }

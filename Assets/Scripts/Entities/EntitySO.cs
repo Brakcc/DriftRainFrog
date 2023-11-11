@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[CreateAssetMenu(fileName = "Entity", menuName = "Froggo/Entity")]
 public class EntitySO : ScriptableObject, IEntity
 {
     public int Id { get => id; set { id = value; } }
