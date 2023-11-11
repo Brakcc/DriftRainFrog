@@ -21,25 +21,16 @@ public class Settings : MonoBehaviour
 
         audiomixer.GetFloat("SoundEff", out float soundvalueforslider);
         soundslider.value = soundvalueforslider;
-
-        //récup des datas depuis le fichier d'enregistrement
-        audiomixer.SetFloat("Music", SavePlayerData.LoadMusicVolume());
-        musicslider.value = SavePlayerData.LoadMusicVolume();
-
-        audiomixer.SetFloat("SoundEff", SavePlayerData.LoadSFXVolume());
-        soundslider.value = SavePlayerData.LoadSFXVolume();
     }
 
     public void SetVolume(float volume)
     {
         audiomixer.SetFloat("Music", volume);
-        GameManager.gm.musicVol = volume;
     }
 
     public void SetSoundEffVolume(float volume)
     {
         audiomixer.SetFloat("SoundEff", volume);
-        GameManager.gm.sfxVol = volume;
     }
 
     public void SetFullScreen(bool isFullscreen)

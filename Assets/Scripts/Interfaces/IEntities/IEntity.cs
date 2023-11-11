@@ -4,6 +4,7 @@ public interface IEntity
 {
     int Id { get; }
     float Speed { get; }
+    float Power { get; }
     EntityEffectType EffectType { get; }
     AudioClip AudioEff { get; }
 }
