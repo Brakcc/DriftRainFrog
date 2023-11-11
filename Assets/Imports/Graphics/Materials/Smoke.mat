@@ -7,14 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: test
-  m_Shader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
-  m_Parent: {fileID: 2100000, guid: e4cd9ec2e978fef4a8b5408bba491474, type: 2}
+  m_Name: Smoke
+  m_Shader: {fileID: 4800000, guid: 8d2bb70cbf9db8d4da26e15b26e74248, type: 3}
+  m_Parent: {fileID: 2100000, guid: 59bfd37a2d55412429cef464df6fc8a6, type: 2}
   m_ModifiedSerializedProperties: 16
-  m_ValidKeywords:
-  - _EMISSION
-  m_InvalidKeywords:
-  - _FLIPBOOKBLENDING_OFF
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -25,31 +23,18 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs:
-    - _BaseMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_TexEnvs: []
     m_Ints: []
     m_Floats:
     - _Blend: 0
-    - _DstBlend: 0
-    - _Metallic: 0.774
-    - _Smoothness: 0.435
-    - _SrcBlend: 1
-    - _Surface: 0
-    - _ZWrite: 1
+    - _QueueOffset: 0
+    - _Smoothness: 0.5
     m_Colors:
-    - _BaseColor: {r: 0.9150943, g: 0.60758716, b: 0.31510323, a: 1}
-    - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.9150943, g: 0.6075871, b: 0.3151032, a: 1}
-    - _EmissionColor: {r: 0.043678753, g: 0.010748175, b: 0.003201584, a: 1}
+    - _BaseColor: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 0.15686275}
+    - _Color: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 0.15686275}
+    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
   m_BuildTextureStacks: []
---- !u!114 &3439713025309601410
+--- !u!114 &5827631696726588735
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
