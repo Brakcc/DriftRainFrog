@@ -10,6 +10,7 @@ public class Froggo : Unit
     public override LineRenderer Lr { get; set; }
     public override float Speed { get; set; }
     public override Vector2 Tar { get; set; }
+    public override float Temp { get; set; }
     public override UnitSO UnitData { get => unitData; set { unitData = value; } }
     [SerializeField] UnitSO unitData; 
     #endregion
@@ -25,8 +26,9 @@ public class Froggo : Unit
     void Update()
     {
         OnLimit();
+        OnPreAim(OnAim());
         if (UnitData.Shoot.action.WasPressedThisFrame()) { OnShoot(OnAim()); }
-        OnDrag(Tar);
+        OnDrag(Tar, OnAim());
         if (UnitData.Shoot.action.WasReleasedThisFrame()) { OnRelease(); }
     }
     #endregion

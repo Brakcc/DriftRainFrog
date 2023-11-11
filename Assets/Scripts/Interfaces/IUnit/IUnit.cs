@@ -12,7 +12,7 @@ public interface IUnit
     #region methodes
     Vector2 OnAim();
     void OnShoot(Vector2 dir);
-    void OnDrag(Vector2 targetPos);
+    void OnDrag(Vector2 targetPos, Vector2 aim);
     void OnRelease();
     #endregion
 }

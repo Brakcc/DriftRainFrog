@@ -13,7 +13,7 @@ public class Entity : AEntity
     // Start is called before the first frame update
     void Start()
     {
-        
+        OnSpawn();
     }
 
     // Update is called once per frame
@@ -24,10 +24,8 @@ public class Entity : AEntity
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            OnCollide(EntityData.EffectType);
-        }
+        if (collision.gameObject.CompareTag("Player")) { OnCollide(EntityData.EffectType, collision.rigidbody); }
+        if (collision.gameObject.CompareTag("Dest")) { Debug.Log("test"); Destroy(gameObject); }
     }
     #endregion
 }

@@ -9,6 +9,9 @@ public class EntitySO : ScriptableObject, IEntity
     public float Speed { get => speed; set { speed = value; } }
     [SerializeField] float speed;
 
+    public float Power { get => power; set { power = value; } }
+    [SerializeField] float power;
+
     public EntityEffectType EffectType { get => effectType; set { effectType = value; } }
     [SerializeField] EntityEffectType effectType;
 
