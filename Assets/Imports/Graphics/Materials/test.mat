@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: red
+  m_Name: test
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -113,9 +113,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.9137255, g: 0.38035762, b: 0.31372547, a: 1}
-    - _Color: {r: 0.9137255, g: 0.3803576, b: 0.31372544, a: 1}
-    - _EmissionColor: {r: 0.4301988, g: 0.011261749, b: 0.015766447, a: 1}
+    - _BaseColor: {r: 0.9150943, g: 0.60758716, b: 0.31510323, a: 1}
+    - _Color: {r: 0.9150943, g: 0.6075871, b: 0.3151032, a: 1}
+    - _EmissionColor: {r: 1.319508, g: 0.2751688, b: 0.031120466, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &3439713025309601410
