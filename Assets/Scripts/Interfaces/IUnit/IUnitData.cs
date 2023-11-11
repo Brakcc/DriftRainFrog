@@ -7,6 +7,7 @@ public interface IUnitData
     InputActionReference Shoot { get; }
     LayerMask ObjectLayer { get; }
     float MaxSpeed { get; }
+    float Cursor { get; }
     float Reach { get; }
     AudioClip AudioEff { get; }
 }

@@ -4,7 +4,7 @@ public interface IUnit
 {
     #region accessors
     bool IsLocked { get; }
-    Entity Presselected { get; }
+    AEntity Presselected { get; }
     Rigidbody2D Rb { get; }
     float Speed { get; }
     #endregion
