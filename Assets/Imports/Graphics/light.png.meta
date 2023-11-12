@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c923f924d227fa7499827ad6c1df21c0
+guid: 82109ddb2ce86f741915b9cbdeb72ec2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -105,91 +105,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: glace toutes_0
-      rect:
-        serializedVersion: 2
-        x: 187
-        y: 24
-        width: 670
-        height: 976
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74c92ea4ce64b434c8efb80b66946d2c
-      internalID: -796185795
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: glace toutes_1
-      rect:
-        serializedVersion: 2
-        x: 1097
-        y: 38
-        width: 691
-        height: 962
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 007c04fd9144cd842a178075873ba751
-      internalID: -665701181
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: glace toutes_2
-      rect:
-        serializedVersion: 2
-        x: 2098
-        y: 17
-        width: 825
-        height: 983
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d423c3ae2cec064890555bad135c3b2
-      internalID: 960798241
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: glace toutes_3
-      rect:
-        serializedVersion: 2
-        x: 2979
-        y: 26
-        width: 931
-        height: 974
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c3e426d83656bd140a99d33085e58cb9
-      internalID: -1565590401
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -200,11 +116,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      glace toutes_1: -665701181
-      glace toutes_2: 960798241
-      glace toutes_3: -1565590401
-      glace toutes_0: -796185795
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

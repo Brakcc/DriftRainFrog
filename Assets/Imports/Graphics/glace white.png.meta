@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c923f924d227fa7499827ad6c1df21c0
+guid: 4f36e92da93a8714096f62ab537f5740
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,85 +107,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: glace toutes_0
+      name: glace white_0
       rect:
         serializedVersion: 2
-        x: 187
-        y: 24
-        width: 670
-        height: 976
+        x: 36
+        y: 0
+        width: 979
+        height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74c92ea4ce64b434c8efb80b66946d2c
-      internalID: -796185795
+      spriteID: 00d77b34582f16542bd5d972b55779c3
+      internalID: -1287164532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: glace toutes_1
+      name: glace white_1
       rect:
         serializedVersion: 2
-        x: 1097
-        y: 38
-        width: 691
-        height: 962
+        x: 1209
+        y: 72
+        width: 631
+        height: 877
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 007c04fd9144cd842a178075873ba751
-      internalID: -665701181
+      spriteID: 12e489384a95f004e9d8c0ee95776f40
+      internalID: 1894848054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: glace toutes_2
+      name: glace white_2
       rect:
         serializedVersion: 2
-        x: 2098
-        y: 17
-        width: 825
-        height: 983
+        x: 2034
+        y: 20
+        width: 1005
+        height: 980
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d423c3ae2cec064890555bad135c3b2
-      internalID: 960798241
+      spriteID: 691f02bb7714c774688637d2c0892049
+      internalID: 263307323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: glace toutes_3
+      name: glace white_3
       rect:
         serializedVersion: 2
-        x: 2979
-        y: 26
-        width: 931
-        height: 974
+        x: 3052
+        y: 0
+        width: 948
+        height: 1000
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3e426d83656bd140a99d33085e58cb9
-      internalID: -1565590401
+      spriteID: d035750fb2638664ea3649ffe127e477
+      internalID: 1496299578
       vertices: []
       indices: 
       edges: []
@@ -201,10 +201,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      glace toutes_1: -665701181
-      glace toutes_2: 960798241
-      glace toutes_3: -1565590401
-      glace toutes_0: -796185795
+      glace white_1: 1894848054
+      glace white_2: 263307323
+      glace white_3: 1496299578
+      glace white_0: -1287164532
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
