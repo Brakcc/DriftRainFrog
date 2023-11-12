@@ -49,8 +49,8 @@ public abstract class Unit : MonoBehaviour, IUnit
         Rb.gravityScale = 0;
         GenerateTongue(targetPos);
         if (Speed < UnitData.MaxSpeed) { Speed += Time.deltaTime; }
-        Rb.AddForce((targetPos - new Vector2(transform.position.x, transform.position.y)).normalized * Speed);
-        Rb.AddForce(aim.normalized * 14);
+        Rb.AddForce((targetPos - new Vector2(transform.position.x, transform.position.y)).normalized * Speed * 15);
+        Rb.AddForce(aim.normalized * 50);
     }
 
     public virtual void OnReleaseForced()
@@ -68,7 +68,7 @@ public abstract class Unit : MonoBehaviour, IUnit
         if (Presselected != null) { Presselected.CanMove = true; Presselected = null; }
         Tar = transform.position;
         Rb.gravityScale = -1;
-        Rb.AddForce(dir.normalized * 20);
+        Rb.AddForce(dir.normalized * 40);
         Lr.enabled = false;
         Anim.SetTrigger("Release");
         IsLocked = false;

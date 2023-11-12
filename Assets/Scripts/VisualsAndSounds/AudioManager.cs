@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -22,7 +21,6 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         needToSwitch = false;
-        //musicID = SavePlayerData.LoadIDMusic(); ;
         audiosource.clip = playlist[musicID];
         audiosource.Play();
     }
