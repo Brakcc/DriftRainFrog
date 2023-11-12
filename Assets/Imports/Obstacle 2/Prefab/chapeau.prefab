@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3826450811097165545}
   - component: {fileID: 6219850705709967028}
   - component: {fileID: 7820246438931205589}
-  m_Layer: 0
+  - component: {fileID: 343116144435610066}
+  m_Layer: 3
   m_Name: chapeau
-  m_TagString: Untagged
+  m_TagString: Interactables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 6514876421697838057}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &6219850705709967028
 PolygonCollider2D:
@@ -101,6 +102,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityData: {fileID: 11400000, guid: 545f613b22c115b4daae43693d7694be, type: 2}
+--- !u!50 &343116144435610066
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748647428419838396}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6518641671069935441
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6514876421697838057}
   - component: {fileID: 8805893504226293060}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "chapeau sorci\xE8re"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +195,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 5b0406a3ecd7b0747a0c4f56bd706171, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

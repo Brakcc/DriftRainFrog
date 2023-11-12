@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4832752659184894032
+--- !u!1 &5593850205035320438
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4859642054338139773}
-  - component: {fileID: 4076105540769014758}
-  - component: {fileID: 1016443366244274366}
-  - component: {fileID: 5711298624901444121}
-  m_Layer: 3
-  m_Name: boussole
-  m_TagString: Interactables
+  - component: {fileID: 5593850205035320433}
+  - component: {fileID: 5593850205035320432}
+  m_Layer: 0
+  m_Name: GameObject Lilou
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4859642054338139773
+--- !u!4 &5593850205035320433
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4832752659184894032}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5862892, y: 5.2857203, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 1
+  m_GameObject: {fileID: 5593850205035320438}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.072996, y: 5.614155, z: 0}
+  m_LocalScale: {x: 0.33117843, y: 0.32476944, z: 0.178529}
+  m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6001342002392224669}
+  - {fileID: 5593850205567373400}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &4076105540769014758
+--- !u!60 &5593850205035320432
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4832752659184894032}
+  m_GameObject: {fileID: 5593850205035320438}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -60,59 +58,25 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 11.7880125, y: -2.171919}
-      - {x: 12.326065, y: 1.924725}
-      - {x: 14.161591, y: 0.88699627}
-      - {x: 15.284254, y: 1.6678348}
-      - {x: 14.00393, y: 4.041453}
-      - {x: 13.8336735, y: 6.4222436}
-      - {x: 12.410543, y: 6.7489114}
-      - {x: 9.772673, y: 4.244107}
-      - {x: 3.9526067, y: 2.922523}
-      - {x: -2.3413754, y: -2.0545256}
-      - {x: -6.8813257, y: -7.289211}
-      - {x: -8.405697, y: -12.185656}
-      - {x: -8.72115, y: -15.6854315}
-      - {x: -6.850421, y: -17.631878}
-      - {x: -3.977515, y: -17.7673}
-      - {x: -0.15989983, y: -15.786766}
-      - {x: 7.0684605, y: -9.492732}
+    - - {x: 27.731537, y: 2.758432}
+      - {x: 26.837738, y: 3.8667378}
+      - {x: 25.08395, y: 4.453668}
+      - {x: 23.917461, y: 3.810011}
+      - {x: 23.339886, y: 3.0923374}
+      - {x: 23.086006, y: 2.349545}
+      - {x: 22.199383, y: 1.5795938}
+      - {x: 22.045408, y: 0.71542233}
+      - {x: 22.997566, y: 1.1755476}
+      - {x: 22.911747, y: 0.49360627}
+      - {x: 23.820421, y: -0.94753754}
+      - {x: 24.936558, y: -2.1740098}
+      - {x: 25.897402, y: -2.097437}
+      - {x: 26.370596, y: -1.7069825}
+      - {x: 27.237097, y: -0.79929614}
+      - {x: 27.44607, y: 0.22485355}
+      - {x: 27.769253, y: 1.5360622}
   m_UseDelaunayMesh: 0
---- !u!114 &1016443366244274366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4832752659184894032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f881dc50083fab49804ca467edd6082, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entityData: {fileID: 11400000, guid: 545f613b22c115b4daae43693d7694be, type: 2}
---- !u!50 &5711298624901444121
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4832752659184894032}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!1 &7811670810766769912
+--- !u!1 &5593850205567373401
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,37 +84,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6001342002392224669}
-  - component: {fileID: 2121236371304375765}
-  m_Layer: 3
-  m_Name: boussole
+  - component: {fileID: 5593850205567373400}
+  - component: {fileID: 5593850205567373403}
+  m_Layer: 0
+  m_Name: lilou (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6001342002392224669
+--- !u!4 &5593850205567373400
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7811670810766769912}
+  m_GameObject: {fileID: 5593850205567373401}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5862892, y: -5.2857203, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 25.652094, y: 0.1401399, z: 0}
+  m_LocalScale: {x: 0.8880317, y: 0.90555614, z: 1.6473342}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4859642054338139773}
+  m_Father: {fileID: 5593850205035320433}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2121236371304375765
+--- !u!212 &5593850205567373403
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7811670810766769912}
+  m_GameObject: {fileID: 5593850205567373401}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -184,13 +148,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 8887850099ba2c94d861e76f22ec8c06, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 63eecf3814be645438268230b50896dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 38, y: 30.00293}
+  m_Size: {x: 11.26, y: 10.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

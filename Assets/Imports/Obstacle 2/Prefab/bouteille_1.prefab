@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3163040728974431795}
   - component: {fileID: 8345158584793766842}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bouteille_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7c863d06ed832d84b8ad14315e488485, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -95,9 +95,10 @@ GameObject:
   - component: {fileID: 2377823935657710931}
   - component: {fileID: 928233127290109155}
   - component: {fileID: -6401898753531923255}
-  m_Layer: 0
+  - component: {fileID: 4209297648977818905}
+  m_Layer: 3
   m_Name: bouteille_1
-  m_TagString: Untagged
+  m_TagString: Interactables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +117,7 @@ Transform:
   m_Children:
   - {fileID: 3163040728974431795}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &928233127290109155
 PolygonCollider2D:
@@ -174,4 +175,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f881dc50083fab49804ca467edd6082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityData: {fileID: 0}
+  entityData: {fileID: 11400000, guid: d685568d904592d43b079111d1f5ede5, type: 2}
+--- !u!50 &4209297648977818905
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5135389243764323280}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
