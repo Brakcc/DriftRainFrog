@@ -30,7 +30,7 @@ public static partial class SavePlayerData
     {
         if (LoadPlayer() != null)
         {
-            string mode = LoadPlayer()[1];
+            string mode = LoadPlayer()[0];
             int modeData = int.Parse(mode);
             return modeData;
         }

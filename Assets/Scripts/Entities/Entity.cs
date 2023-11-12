@@ -25,7 +25,7 @@ public class Entity : AEntity
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player")) { OnCollide(EntityData.EffectType, collision.rigidbody); }
-        if (collision.gameObject.CompareTag("Dest")) { Debug.Log("test"); Destroy(gameObject); }
+        if (collision.gameObject.CompareTag("Dest")) { Destroy(gameObject); }
     }
     #endregion
 }

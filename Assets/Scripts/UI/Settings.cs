@@ -7,11 +7,11 @@ using System.Linq;
 
 public class Settings : MonoBehaviour
 {
-    [SerializeField] private AudioMixer audiomixer;
+    private AudioMixer audiomixer;
 
     //param sons
-    [SerializeField] private Slider musicslider;
-    [SerializeField] private Slider soundslider;
+    [SerializeField] Slider musicslider;
+    [SerializeField] Slider soundslider;
 
     public void Start()
     {
