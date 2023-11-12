@@ -17,4 +17,4 @@ MonoBehaviour:
   entityType: 0
   effectType: 1
   power: 1000
-  audioEff: {fileID: 0}
+  audioEff: {fileID: 8300000, guid: d44075be8e5feea479cc59d63cdf672f, type: 3}

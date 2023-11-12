@@ -12,6 +12,7 @@ public abstract class Unit : MonoBehaviour, IUnit
     public abstract Vector2 Tar { get; set; }
     public abstract float Temp { get; set; }
     public abstract UnitSO UnitData { get; set; }
+    public abstract Animator Anim { get; set; }
     #endregion
 
     #region methodes to herit
@@ -19,6 +20,7 @@ public abstract class Unit : MonoBehaviour, IUnit
     {
         Rb = GetComponent<Rigidbody2D>();
         Lr = GetComponent<LineRenderer>();
+        Anim = GetComponent<Animator>();
         IsLocked = false;
     }
 
@@ -35,6 +37,9 @@ public abstract class Unit : MonoBehaviour, IUnit
         Lr.enabled = true;
         Vector3[] aimedPos = new Vector3[] { transform.position, new Vector3(aimed.x, aimed.y, 0) + transform.position};
         Lr.SetPositions(aimedPos);
+        Vector2 dir = aimed - new Vector2(transform.position.x, transform.position.y);
+        float angle = Vector2.SignedAngle(Vector2.up, dir);
+        transform.eulerAngles = new Vector3(0, 0, angle);
     }
 
     public virtual void OnDrag(Vector2 targetPos, Vector2 aim)
@@ -45,7 +50,7 @@ public abstract class Unit : MonoBehaviour, IUnit
         GenerateTongue(targetPos);
         if (Speed < UnitData.MaxSpeed) { Speed += Time.deltaTime; }
         Rb.AddForce((targetPos - new Vector2(transform.position.x, transform.position.y)).normalized * Speed);
-        Rb.AddForce(aim.normalized * 7);
+        Rb.AddForce(aim.normalized * 14);
     }
 
     public virtual void OnReleaseForced()
@@ -54,6 +59,7 @@ public abstract class Unit : MonoBehaviour, IUnit
         Tar = transform.position;
         Rb.gravityScale = -1;
         Lr.enabled = false;
+        Anim.SetTrigger("Release");
         IsLocked = false;
     }
 
@@ -62,8 +68,9 @@ public abstract class Unit : MonoBehaviour, IUnit
         if (Presselected != null) { Presselected.CanMove = true; Presselected = null; }
         Tar = transform.position;
         Rb.gravityScale = -1;
-        Rb.AddForce(dir.normalized * 10);
+        Rb.AddForce(dir.normalized * 20);
         Lr.enabled = false;
+        Anim.SetTrigger("Release");
         IsLocked = false;
     }
 
@@ -71,6 +78,7 @@ public abstract class Unit : MonoBehaviour, IUnit
     {
         if (IsLocked) return;
         RaycastHit2D aimAt = Physics2D.Raycast(transform.position, dir, UnitData.Reach, UnitData.ObjectLayer);
+        Anim.SetTrigger("Shoot");
 
         if (!aimAt) return;
         Presselected = aimAt.transform.GetComponent<AEntity>();
@@ -81,6 +89,7 @@ public abstract class Unit : MonoBehaviour, IUnit
             IsLocked = true;
             Tar = aimAt.point;
             Temp = (Tar - Rb.position).magnitude;
+            AudioManager.ad.PlayClipAt(UnitData.AudioEff, aimAt.point);
             Rb.velocity /= new Vector2(2, 2);
         }
         else if (Presselected.EntityData.TypeEntity == EntityType.Collectible)

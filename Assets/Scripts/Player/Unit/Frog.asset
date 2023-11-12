@@ -20,4 +20,4 @@ MonoBehaviour:
   maxSpeed: 10
   cursor: 0.25
   reach: 10
-  audioEff: {fileID: 0}
+  audioEff: {fileID: 8300000, guid: 4cc3e081205e09d47a4ed99178a69351, type: 3}

@@ -13,7 +13,9 @@ public class Froggo : Unit
     public override Vector2 Tar { get; set; }
     public override float Temp { get; set; }
     public override UnitSO UnitData { get => unitData; set { unitData = value; } }
-    [SerializeField] UnitSO unitData; 
+    [SerializeField] UnitSO unitData;
+    
+    public override Animator Anim { get; set; }
     #endregion
 
     #region inherited methodes

@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
 
     void ManagePoints()
     {
-        if (Player.IsDead) return;
+        if (Player != null && Player.IsDead) return;
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= 1f)
         {

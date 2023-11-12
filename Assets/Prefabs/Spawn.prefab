@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af7215d823c801f4093f52eb6689daf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 6878166195095993760, guid: b5c4fdf0576131142aa9d5876ede4bb2, type: 3}
+  obj: {fileID: 8059657323152820074, guid: 765a5b6e0eaf533438a9647e02bb4aca, type: 3}
   waitTime: 0.32
   ySpawnPos: -102.7
   minXSpawnPos: -20
   maxXSpawnPos: 20
+  bonusSpeed: 0
   parent: {fileID: 0}

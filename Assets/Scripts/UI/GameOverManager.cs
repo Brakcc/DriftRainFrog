@@ -8,6 +8,7 @@ public class GameOverManager : MonoBehaviour
     public void ToucheRetry()
     {
         //Recharger la scène
+        GameManager.gm.SaveAll();
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //Réactiver les moves du persos et la vie du perso
@@ -18,6 +19,7 @@ public class GameOverManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+        GameManager.gm.SaveAll();
     }
 
     public void ToucheQuit()

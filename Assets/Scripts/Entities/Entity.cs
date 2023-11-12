@@ -8,7 +8,7 @@ public class Entity : AEntity
     public override EntitySO EntityData { get => entityData; set { entityData = value; } }
     [SerializeField] EntitySO entityData;
 
-    public float ZoneSpeed { get; set; }
+    public override float ZoneSpeed { get; set; }
     #endregion
 
     #region inherited methodes
@@ -27,7 +27,6 @@ public class Entity : AEntity
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player")) { OnCollide(EntityData.EffectType, collision.rigidbody); }
-        if (collision.gameObject.CompareTag("Dest")) { Destroy(gameObject); }
     }
     #endregion
 }

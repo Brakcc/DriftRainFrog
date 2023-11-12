@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
 
@@ -8,7 +8,7 @@ public class MenuStart : MonoBehaviour
     [SerializeField] private GameObject menuwindow;
     [SerializeField] private GameObject quitwindow;
 
-    [SerializeField] private TMP_Text bestTime;
+    [SerializeField] private Text bestTime;
 
     void Start()
     {
@@ -20,7 +20,6 @@ public class MenuStart : MonoBehaviour
         }
         Cursor.visible = false;
         InitsUI(path1);
-        //StartCoroutine(StartTheGame());
     }
 
     void InitsUI(string path)

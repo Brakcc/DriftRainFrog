@@ -9,6 +9,7 @@ public class EntitySpawn : MonoBehaviour
     [SerializeField] float ySpawnPos;
     [SerializeField] float minXSpawnPos;
     [SerializeField] float maxXSpawnPos;
+    public float bonusSpeed;
     [SerializeField] Transform parent;
     #endregion
 
@@ -28,6 +29,7 @@ public class EntitySpawn : MonoBehaviour
             GameObject temp = Instantiate(obj, parent);
             Vector2 pos = new(Mathf.Lerp(minXSpawnPos, maxXSpawnPos, Random.value), ySpawnPos);
             temp.transform.position = pos;
+            temp.GetComponent<AEntity>().ZoneSpeed = bonusSpeed;
         }
     }
     #endregion

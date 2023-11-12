@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class EndGame : MonoBehaviour
 {
     [SerializeField] GameObject gameOverUI;
+    [SerializeField] GameObject iGUI;
     [SerializeField] Text finalScore;
     [SerializeField] Text bestScore;
 
@@ -15,6 +16,7 @@ public class EndGame : MonoBehaviour
 
     void EndTheGame()
     {
+        iGUI.SetActive(false);
         if (GameManager.gm.CurrentPoints > GameManager.gm.BestPoint)
         {
             GameManager.gm.BestPoint = GameManager.gm.CurrentPoints;
