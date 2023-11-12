@@ -7,6 +7,8 @@ public class Entity : AEntity
 
     public override EntitySO EntityData { get => entityData; set { entityData = value; } }
     [SerializeField] EntitySO entityData;
+
+    public float ZoneSpeed { get; set; }
     #endregion
 
     #region inherited methodes
@@ -19,7 +21,7 @@ public class Entity : AEntity
     // Update is called once per frame
     void Update()
     {
-        OnMove(EntityData.Speed);
+        OnMove(EntityData.Speed + ZoneSpeed);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

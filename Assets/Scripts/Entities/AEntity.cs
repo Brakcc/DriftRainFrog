@@ -21,7 +21,7 @@ public abstract class AEntity : MonoBehaviour
     {
         if (rb.velocity.y >= 0) return;
         rb.AddForce(Vector2.up * EntityData.Power);
-        rb.GetComponent<Unit>().OnRelease();
+        rb.GetComponent<Unit>().OnReleaseForced();
     }
     #endregion
 }

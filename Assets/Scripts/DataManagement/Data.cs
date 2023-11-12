@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class Data
 {
-    public int points;
+    public float points;
 
     public Data(GameManager gm)
     {

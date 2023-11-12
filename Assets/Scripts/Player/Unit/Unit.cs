@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class Unit : MonoBehaviour, IUnit
 {
     #region accessors to herit
-
+    public abstract bool IsDead { get; set; }
     public abstract bool IsLocked { get; set; }
     public abstract AEntity Presselected { get; set; }
     public abstract Rigidbody2D Rb { get; set; }
@@ -40,6 +40,7 @@ public abstract class Unit : MonoBehaviour, IUnit
     public virtual void OnDrag(Vector2 targetPos, Vector2 aim)
     {
         if (!IsLocked) return;
+        if ((new Vector3(Tar.x, Tar.y, 0) - transform.position).magnitude > UnitData.Reach) OnRelease(OnAim());
         Rb.gravityScale = 0;
         GenerateTongue(targetPos);
         if (Speed < UnitData.MaxSpeed) { Speed += Time.deltaTime; }
@@ -47,11 +48,21 @@ public abstract class Unit : MonoBehaviour, IUnit
         Rb.AddForce(aim.normalized * 7);
     }
 
-    public virtual void OnRelease()
+    public virtual void OnReleaseForced()
     {
         if (Presselected != null) { Presselected.CanMove = true; Presselected = null; }
         Tar = transform.position;
         Rb.gravityScale = -1;
+        Lr.enabled = false;
+        IsLocked = false;
+    }
+
+    public virtual void OnRelease(Vector2 dir)
+    {
+        if (Presselected != null) { Presselected.CanMove = true; Presselected = null; }
+        Tar = transform.position;
+        Rb.gravityScale = -1;
+        Rb.AddForce(dir.normalized * 10);
         Lr.enabled = false;
         IsLocked = false;
     }
@@ -61,14 +72,22 @@ public abstract class Unit : MonoBehaviour, IUnit
         if (IsLocked) return;
         RaycastHit2D aimAt = Physics2D.Raycast(transform.position, dir, UnitData.Reach, UnitData.ObjectLayer);
 
-        if (aimAt)
+        if (!aimAt) return;
+        Presselected = aimAt.transform.GetComponent<AEntity>();
+        
+        if (Presselected.EntityData.TypeEntity == EntityType.Solid)
         {
-            Presselected = aimAt.transform.GetComponent<AEntity>();
             Presselected.CanMove = false;
             IsLocked = true;
             Tar = aimAt.point;
             Temp = (Tar - Rb.position).magnitude;
             Rb.velocity /= new Vector2(2, 2);
+        }
+        else if (Presselected.EntityData.TypeEntity == EntityType.Collectible)
+        {
+            GameManager.gm.CurrentFlyNumber++;
+            Destroy(Presselected.gameObject);
+            Presselected = null;
         }
     }
     #endregion

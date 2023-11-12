@@ -6,7 +6,6 @@ public static partial class SavePlayerData
     public static void SavePlayer(GameManager gm)
     {
         string path = Application.persistentDataPath + "/datas.data";
-        Debug.Log("save data");
         Data lastData = new (gm);
         File.WriteAllText(path, lastData.points.ToString());
     }
@@ -26,15 +25,15 @@ public static partial class SavePlayerData
     }
 
     #region LoadData
-    public static int LoadPoints()
+    public static float LoadPoints()
     {
         if (LoadPlayer() != null)
         {
             string mode = LoadPlayer()[0];
-            int modeData = int.Parse(mode);
+            float modeData = float.Parse(mode);
             return modeData;
         }
-        else { return 1; }
+        else { return 0; }
     }
     #endregion
 }
