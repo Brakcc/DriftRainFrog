@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text BestScore;
     [SerializeField] Text currentScore;
 
+    public GameObject Player { get; set; }
+
     public int BestPoint { get; private set; }
     int currentPoints;
 
@@ -21,15 +23,10 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Methodes
-    private void Start()
+    void Start()
     {
         LoadPlayer();
         InitsGameScene();
-    }
-
-    private void Update()
-    {
-        
     }
 
     void InitsGameScene()
@@ -42,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     void InitGame()
     {
-        
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
     #endregion
 
@@ -52,7 +49,7 @@ public class GameManager : MonoBehaviour
         SavePlayerData.SavePlayer(this);
     }
 
-    private void OnApplicationQuit()
+    void OnApplicationQuit()
     {
         SaveAll();
     }
@@ -61,7 +58,7 @@ public class GameManager : MonoBehaviour
     #region Loadings
     public void LoadPlayer()
     {
-        
+        BestPoint = SavePlayerData.LoadPoints();
     }
     #endregion
 }

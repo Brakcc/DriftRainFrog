@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -6,12 +5,10 @@ using System.IO;
 
 public class MenuStart : MonoBehaviour
 {
-    [SerializeField] private GameObject settingswindow;
     [SerializeField] private GameObject menuwindow;
     [SerializeField] private GameObject quitwindow;
 
     [SerializeField] private TMP_Text bestTime;
-    [SerializeField] private GameObject tampon;
 
     void Start()
     {
@@ -21,21 +18,14 @@ public class MenuStart : MonoBehaviour
             GameManager.gm.SaveAll();
             ResetGame();
         }
-        Cursor.visible = true;
-        settingswindow.SetActive(false);
-        InitsUI();
-        StartCoroutine(StartTheGame());
+        Cursor.visible = false;
+        InitsUI(path1);
+        //StartCoroutine(StartTheGame());
     }
 
-    void InitsUI()
+    void InitsUI(string path)
     {
-        
-    }
-
-    IEnumerator StartTheGame()
-    {
-        yield return new WaitForSeconds(3f);
-        menuwindow.SetActive(true);
+        if (File.Exists(path)) { bestTime.text = SavePlayerData.LoadPoints().ToString(); }
     }
 
     #region buttons methodes
@@ -45,25 +35,12 @@ public class MenuStart : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void OpenSettingsButton()
-    {
-        menuwindow.SetActive(false);
-        settingswindow.SetActive(true);
-    }
-
-    public void CloseSettingsButton()
-    {
-        menuwindow.SetActive(true);
-        settingswindow.SetActive(false);
-    }
-
     public void ResetGame()
     {
         GameManager.gm.SaveAll();
-        CloseSettingsButton();
     }
 
-    public void wantToQuit()
+    public void WantToQuit()
     {
         menuwindow.SetActive(false);
         quitwindow.SetActive(true);

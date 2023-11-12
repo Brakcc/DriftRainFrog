@@ -16,7 +16,6 @@ public class Froggo : Unit
     #endregion
 
     #region inherited methodes
-    // Start is called before the first frame update
     void Start()
     {
         OnInit();

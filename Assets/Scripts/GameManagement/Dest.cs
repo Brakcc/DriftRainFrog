@@ -6,6 +6,6 @@ public class Dest : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Interactables")) { Debug.Log("test"); Destroy(collision.gameObject); }
+        if (collision.CompareTag("Interactables")) { Destroy(collision.gameObject); }
     }
 }

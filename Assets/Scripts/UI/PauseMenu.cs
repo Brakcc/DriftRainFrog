@@ -9,13 +9,6 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private InputActionReference pause;
 
     [SerializeField] private GameObject pauseMenuUI;
-    [SerializeField] private GameObject SRSettingsUI;
-    [SerializeField] private GameObject SettingsUI;
-
-    void Start()
-    {
-        SettingsUI.SetActive(false);
-    }
 
     void Update()
     {
@@ -24,26 +17,12 @@ public class PauseMenu : MonoBehaviour
             if (gameIsPaused)
             {
                 Resume();
-                SettingsUI.SetActive(false);
-                SRSettingsUI.SetActive(false);
             }
             else
             {
                 Paused();
             }
         }
-    }
-
-    public void SettingsButton()
-    {
-        SettingsUI.SetActive(true);
-        pauseMenuUI.SetActive(false);
-    }
-
-    public void CloseSettings()
-    {
-        SettingsUI.SetActive(false);
-        pauseMenuUI.SetActive(true);
     }
 
     public void Paused()
@@ -66,18 +45,6 @@ public class PauseMenu : MonoBehaviour
 
         gameIsPaused = false;
         Time.timeScale = 1; 
-    }
-
-    public void OpenSpeedRun()
-    {
-        SRSettingsUI.SetActive(true);
-        SettingsUI.SetActive(false);
-    }
-    
-    public void CloseSpeedRun()
-    {
-        SRSettingsUI.SetActive(false);
-        SettingsUI.SetActive(true);
     }
 
     public void LoadMainMenu()
